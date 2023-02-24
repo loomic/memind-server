@@ -30,7 +30,7 @@ router.post('/', function(req, res) {
 
   //store in database
   //for now just echo responses
-  res.send({userID: userID, answers: answers});
+  res.send({userID: userID, answers: answers, test: 'test'});
 
 })
 
