@@ -28,8 +28,8 @@ router.post('/', function(req, res) {
 
   let answers = req.body.answers
 
-  console.log(userID)
-  console.log(answers)
+  console.log('userID: ', userID)
+  console.log('answers: ', answers)
 
   //store in database
   //for now just echo responses
