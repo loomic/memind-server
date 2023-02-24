@@ -28,6 +28,9 @@ router.post('/', function(req, res) {
 
   let answers = req.body.answers
 
+  console.log(userID)
+  console.log(answers)
+
   //store in database
   //for now just echo responses
   res.send({userID: userID, answers: answers, test: 'test'});
