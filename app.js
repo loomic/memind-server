@@ -6,13 +6,11 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var hike = require('./routes/hike');
 var test = require('./routes/test');
 var questionnaire = require('./routes/questionnaire');
+var activities = require('./routes/activities');
 
 var app = express();
-app.get('/hikes', hike.index);
-app.post('/add_hike', hike.add_hike);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -28,6 +26,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/test', test)
 app.use('/questionnaire', questionnaire)
+app.use('/activities', activities)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

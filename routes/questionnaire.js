@@ -14,8 +14,7 @@ router.get('/', function(req, res) {
     'Poor appetite or overeating',
     'Feeling bad about yourself — or that you are a failure or have let yourself or your family down',
     'Trouble concentrating on things, such as reading the newspaper or watching television',
-    `Moving or speaking so slowly that other people could have noticed. Or the opposite —
-    being so fidgety or restless that you have been moving around a lot more than usual`,
+    `Moving or speaking so slowly that other people could have noticed. Or the opposite — being so fidgety or restless that you have been moving around a lot more than usual`,
     'Thoughts that you would be better of dead, or of hurting yourself',
   ]
 
@@ -27,9 +26,6 @@ router.post('/', function(req, res) {
   let userID = req.body.userID
 
   let answers = req.body.answers
-
-  console.log('userID: ', userID)
-  console.log('answers: ', answers)
 
   //store in database
   //for now just echo responses
