@@ -46,8 +46,9 @@ app.use(function(err, req, res, next) {
 });
 
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+var initializeApp = require("firebase/app").initializeApp;
+var getFirestore = require("firebase/firestore").getFirestore;
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
