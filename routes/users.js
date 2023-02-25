@@ -1,9 +1,11 @@
 var express = require('express');
 var router = express.Router();
+const db = require('../app').db;
+import { addDoc, collection, doc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore"; 
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+
+router.post('/createUser', function(req, res) {
+  
 });
 
 module.exports = router;

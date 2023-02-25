@@ -54,5 +54,20 @@ router.post('/', async function(req, res) {
   res.send({userID: userID, phqScore: phqScore, gadScore: gadScore});
 })
 
+router.get('/results', async function(req, res) {
+  let userID = req.query.userID
+
+  //get user info from database
+  const userDoc = await doc(db, "users", userID);
+  const user = await getDoc(userDoc);
+
+  if (user.exists()) {
+    res.send(user.data());
+  } else {
+    // doc.data() will be undefined in this case
+    console.log("no user results found");
+  }
+})
+
 
 module.exports = router;
