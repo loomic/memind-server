@@ -1,11 +1,10 @@
 var express = require('express');
 var router = express.Router();
-const db = require('../app').db;
 
-var firestore = require("firebase/firestore");
-var addDoc = firestore.addDoc;
-var collection = firestore.collection;
-var doc = firestore.doc;
+// var firestore = require("firebase/firestore");
+// var addDoc = firestore.addDoc;
+// var collection = firestore.collection;
+// var doc = firestore.doc;
 
 
 /* GET questionnaire. */
@@ -48,13 +47,18 @@ router.post('/', async function(req, res) {
   let phqScore = answers.phq9.reduce((a, b) => a + b, 0);
   let gadScore = answers.gad7.reduce((a, b) => a + b, 0);
 
+  // example answers object
+  // {
+      //   phq9: [0, 1, 2, 3, 4, 5, 6, 7, 8],
+  //   gad7: [0, 1, 2, 3, 4, 5, 6]
+  // }
   //store in database
-  const docRef = await addDoc(collection(db, "users"), {
-    userID: userID,
-    phqScore: phqScore,
-    gadScore: gadScore,
-    datetime: new Date()
-  });
+  // const docRef = await addDoc(collection(db, "users"), {
+  //   userID: userID,
+  //   phqScore: phqScore,
+  //   gadScore: gadScore,
+  //   datetime: new Date()
+  // });
   //for now just echo responses
   res.send({userID: userID, phqScore: phqScore, gadScore: gadScore});
 })
@@ -63,8 +67,8 @@ router.get('/results', async function(req, res) {
   let userID = req.query.userID
 
   //get user info from database
-  const userDoc = await doc(db, "users", userID);
-  const user = await getDoc(userDoc);
+  // const userDoc = await doc(db, "users", userID);
+  // const user = await getDoc(userDoc);
 
   if (user.exists()) {
     res.send(user.data());
