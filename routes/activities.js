@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
-var fetch = require('node-fetch');
+const db = require('../app').db;
+var addDoc = require("firebase/firestore").addDoc;
+var collection = require("firebase/firestore").collection;
 
 function getActivities() {
   //just returning example list for now 
