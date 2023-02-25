@@ -1,3 +1,27 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAUxKG_G25JEcQKAKbiymyKHeRf1Y8ihwA",
+  authDomain: "memind-c2101.firebaseapp.com",
+  projectId: "memind-c2101",
+  storageBucket: "memind-c2101.appspot.com",
+  messagingSenderId: "386267628146",
+  appId: "1:386267628146:web:45b44767eef2e2cc42b8eb",
+  measurementId: "G-HMZ9YELZGZ"
+};
+
+// Initialize Firebase
+const firebaseApp = initializeApp(firebaseConfig);
+// Initialize Cloud Firestore and get a reference to the service
+const db = getFirestore(app);
+
+//express routing stuff
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -44,4 +68,4 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+module.exports = {'app': app, 'db': db};
