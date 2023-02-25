@@ -1,7 +1,12 @@
 var express = require('express');
 var router = express.Router();
 const db = require('../app').db;
-import { addDoc, collection, doc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore"; 
+
+var firestore = require("firebase/firestore");
+var addDoc = firestore.addDoc;
+var collection = firestore.collection;
+var doc = firestore.doc;
+
 
 /* GET questionnaire. */
 router.get('/', function(req, res) {
