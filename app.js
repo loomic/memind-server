@@ -69,4 +69,4 @@ const firebaseApp = initializeApp(firebaseConfig);
 // Initialize Cloud Firestore and get a reference to the service
 const db = getFirestore(firebaseApp);
 
-module.exports = {'app': app, 'db': db};
+module.exports = app;
