@@ -37,7 +37,12 @@ router.get('/', function(req, res) {
   let lat = req.query.latitude
   let lon = req.query.longitude
 
-  let weather = fetch(`https://api.openweathermap.or/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=96e13a02452b273b788ced0c95138859`)
+  //set user agent of fetch
+  let weather = fetch(`https://api.weather.gov/points/${lat},${long}`, {
+    headers: {
+      'User-Agent': 'http://node-express-env.eba-mxjk9php.us-west-1.elasticbeanstalk.com/'
+    }
+  })
 
   res.send();
 });
